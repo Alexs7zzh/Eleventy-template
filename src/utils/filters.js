@@ -1,6 +1,5 @@
 const { DateTime } = require('luxon')
 const util = require('util')
-const md = require('./markdown')
 
 module.exports = config => {
   config.addFilter('readableDate', dateObj => {

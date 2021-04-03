@@ -7,6 +7,5 @@ module.exports = require('markdown-it')({
   .use(require('markdown-it-anchor'), {
     slugify: s => uslug(s)
   })
-  .use(require('markdown-it-attrs'))
   .use(require('./markdown/emphasis'))
   .use(require('./markdown/figure'))
