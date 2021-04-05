@@ -14,9 +14,9 @@ module.exports = (document, options) => {
   
   if (options.sizes.length === 0) throw new Error('"sizes" for the picture plugin is not defined.')
   
-  const images = [...document.querySelectorAll('img')]
+  const images = [...document.querySelectorAll('figure img')]
   
-  images.forEach(i => {
+  images.forEach((i, index) => {
     const src = '.' + i.getAttribute('src')
     
     Image(src, options)
@@ -25,8 +25,10 @@ module.exports = (document, options) => {
     const last = meta.jpeg[meta.jpeg.length - 1]
     i.setAttribute('width', last.width)
     i.setAttribute('height', last.height)
-    i.setAttribute('loading', 'lazy')
-    i.setAttribute('decoding', 'async')
+    if (index !== 0) {
+      i.setAttribute('loading', 'lazy')
+      i.setAttribute('decoding', 'async') 
+    }
     
     i.outerHTML = `
     <picture>
