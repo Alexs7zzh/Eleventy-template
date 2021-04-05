@@ -1,7 +1,8 @@
 const Image = require('@11ty/eleventy-img')
 
 const defaultOptions = {
-  widths: [320, 640, 1280, 1920, null],
+  // eleventy-img won't upscale image
+  widths: [640, 768, 1280, 1366, 1600, 1920, null],
   sizes: '',
   formats: ['webp', 'jpeg'],
   urlPath: '/assets/',
