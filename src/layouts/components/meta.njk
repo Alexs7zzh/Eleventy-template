@@ -1,3 +1,6 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 {% set currentTitle = (title + " | " + meta.title) if title else meta.title %}
 
 <title>{{ currentTitle }}</title>
@@ -10,7 +13,6 @@
 <meta property="og:description" content="{{ description or meta.description }}">
 <meta property="og:url" content="{{ meta.url }}">
 
-{# Put icon images in assets folder #}
 <link rel="icon" href="/icon-32.png" sizes="32x32">
 <link rel="icon" href="/icon-96.png" sizes="96x96">
 <link rel="icon" href="/icon-180.png" sizes="180x180">
